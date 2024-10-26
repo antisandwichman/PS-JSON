@@ -28,5 +28,9 @@ function Get-Settings{
 }
 
 function Save-Settings{
+	param(
+		[hashtable]$settings
+		[string]$settingsFile
+	)
     $settings | ConvertTo-Json -Depth 100 | Set-Content -Path $settingsFile
 }
